@@ -3,6 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# Define custom dissolve transitions
+define slow_dissolve = Dissolve(1.5)
+define quick_dissolve = Dissolve(0.5)
+
 # The game starts here.
 
 label start:
@@ -12,27 +16,58 @@ label start:
 
     play music bgm_ancient_memories fadein 1.0
 
-    c "Time is a cruel concept wouldn't you agree?"
-    c "So many humans would give up anything just for more time"
-    c "After all"
-    c "Time's endless march creates many regrets"
-    c "Heh."
-    c "Perhaps we started off on the wrong foot when we first met."
-    c "Perhaps I'll try a different approach."
+    # Centered dramatic opening - no textbox, text appears in center
+    show text "{color=#FFF}{size=40}Time is a cruel concept wouldn't you agree?{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}So many humans would give up anything just for more time{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}After all{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}Time's endless march creates many regrets{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}...{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}Perhaps we started off on the wrong foot when we first met.{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
+    
+    show text "{color=#FFF}{size=40}Perhaps I'll try a different approach.{/size}{/color}" at truecenter with slow_dissolve
+    pause
+    hide text with quick_dissolve
 
     # Scene Description: A girl awakens in the fragmented memory space Cycle No. Unknown... (FADE IN)
     # Assuming a background for the fragmented memory space is available, e.g., 'bg fragmented_space'
     # scene bg fragmented_space with fadeIn
 
-    c "So we meet again..."
-
-    show sera neutral with dissolve
+    show sera neutral:
+        xalign 1.0 xzoom -1.0
+    with dissolve
     "The girl on the floor stares at Time itself with a blank expression... She has been here before... More times than she could remember..."
 
-    c "Don't look at me like that."
-    c "By now, you of all people should already know the consequences of your actions"
+    t "So we meet again..."
+
+    show curator glitching:
+        xalign 0 yalign 0.5
+    with slow_dissolve
+
+    t "Don't look at me like that."
+    t "By now, you of all people should already know the consequences of your actions"
     q "..."
-    c "Silent treatment, again? *sigh* Don't worry, we have all the time in the world here..."
+    t "Silent treatment, again? *sigh* Don't worry, we have all the time in the world here..."
+
+    scene rift_time_bg with flash_white
+    show sera neutral:
+        xalign 1.0 xzoom -1.0
 
     "A short haired girl stands up and turns her back on time."
 
