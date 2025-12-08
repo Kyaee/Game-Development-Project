@@ -50,40 +50,78 @@ label start:
     # scene bg fragmented_space with fadeIn
 
     show sera neutral:
-        xalign 1.0 xzoom -1.0
+        xalign 0 yalign 0.5
     with dissolve
-    "The girl on the floor stares at Time itself with a blank expression... She has been here before... More times than she could remember..."
-
+    "The girl on the floor stares at Time itself with a blank expression..."
+    "She has been here before..." 
+    "More times than she could remember..."
     t "So we meet again..."
 
     show curator glitching:
-        xalign 0 yalign 0.5
+        xalign 1.0 yalign 0.5 xzoom -1.0
     with slow_dissolve
-
     t "Don't look at me like that."
     t "By now, you of all people should already know the consequences of your actions"
     q "..."
-    t "Silent treatment, again? *sigh* Don't worry, we have all the time in the world here..."
+    t "Silent treatment, again?"
+    t "{i}s i g h . . . {/i}"
+    t "Don't worry, we have all the time in the world here..."
+
+    stop music fadeout 1.0 
+
+
+    #####################################################################################
+    # Scene Description: The Rift of Time - A void where time stands still (FADE IN)
+    #####################################################################################
+
+    play music bgm_quiet_sea fadein 1.0
 
     scene rift_time_bg with flash_white
-    show sera neutral:
-        xalign 1.0 xzoom -1.0
+    show sera sad:
+        xalign 0 yalign 0.5
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
+    with dissolve
 
     "A short haired girl stands up and turns her back on time."
 
-    q "You know it's futile to change events."
-    q "It's not like I'm the one that's stopping you from your \"happy ending\"."
-    q "After all, I'm just a \"curator\" who records the history of the world."
-    q "And you..."
+    t "You know it's futile to change events."
+    t "It's not like I'm the one that's stopping you from your \"happy ending\"."
+    t "After all, I'm just a \"curator\" who records the history of the world."
+    c "And you..."
 
+    # CHANGE THE CHARACTER SPRITE
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You are tampering with the natural flow and course of time in the num-"
+
+    #####################################################################################
+    # Scene Art Play 1: The Rift of Time - A void where time stands still (Flash)
+    #####################################################################################
+
+    scene scene1 with flash_white
+
+    hide sera 
+    hide curator
+
     q "Numerous times I've tried to save my friends!"
     c "Then..."
     c "Why won't you let the world move forward?"
     q "..."
     q "I-"
     q "I just need to save them."
+
+    scene rift_time_bg 
+    show sera neutral:
+        xalign 0 yalign 0.5
+
+    # CHANGE THE CHARACTER SPRITE
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "I see..."
+
+    show curator sad:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Before you attempt to break reality again, I implore you to walk with me."
 
     menu:
@@ -92,46 +130,90 @@ label start:
         "Leave":
             jump leave
 
+
 label walk_with_her:
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     "This choice seems to make the woman happy. As if waiting for this moment, the curator takes the chance to explain something she's been wanting to tell for a long time."
 
     c "This place is more than just a void."
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "This is the river of time where I keep all of which has transpired."
+
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Your endless cycles created an endpoint in the river which is not supposed to exist."
     c "After all, this is supposed to be an infinite void."
     c "I remember your computer nerd friend had a similar term for this."
 
-    "Time directs her gaze downward as if she was deep in thought."
+    show curator sad:
+        xalign 1.0 yalign 0.5 xzoom -1.0
+    "The Curator directs her gaze downward as if she was deep in thought."
 
     c "What the world just experienced was a memory overflow."
-
     "Time dramatically unveils the vast fragments of memories and worlds coalesced into one spot as if an invisible wall is preventing the world from moving forward. Sera stands shocked at the vast accumulation of crystals before her. This was her many attempts in giving her friends a true ending."
-
+        
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Since you won't let the world move forward, it just collapsed on itself."
     c "If you go back to the beginning of the week, who knows how much faster the world will break."
     c "After all, most of the shards here belong to you, the worlds you made, and your memories, Sera."
     s "Then what do you suggest, I do"
-    c "NO WAY! YOU'RE ACTUALLY COOPERATING!?"
-    c "Ahem*"
 
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
+    c "NO WAY! YOU'RE ACTUALLY COOPERATING!?"
+
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
+    c "{i}Ahem {/i}"
     "The curator clears her throat and straightens her dress to appear more dignified."
 
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "I'll be honest, you REALLY need to return my pocket watch or whatever that old geezer turned my authority into."
+
+    show sera angry: 
+        xalign 0.0 yalign 0.5
     s "But what about my friends?"
+
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     s "Without the things I did, they'd be forced to walk paths they never wanted to tread."
     s "I won't allow their dreams to fade away like it's nothing."
     s "I can't think of living in a world where we can't be all together again."
     s "I can't just go back knowing I could have done something for them."
+
+    show curator sad:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Sera, this entire conundrum we are in is the result of your own memories!"
     c "There won't be any friends or a world to return to if you remember everything..."
+
+    show curator angry:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You repeated the same week for who knows how long to the point your very memories have clogged the flow of time!"
+
+    scene scene2 with flash_white
+    hide curator
+    hide sera
+
     s "And then what!? I go back to the beginning without a single memory of any loop?"
     s "I can't bear to witness my friend disappear like that!"
 
     "Time observes the girl lost in her own conundrum with little to no regard of the perilous fate she placed reality in."
 
-    c "Honestly, if that local deity of yours never played with my realm's authority we wouldn't be here in the first place."
+    c "Honestly, if that {b}{i}local deity{/i}{/b} of yours never played with my realm's authority we wouldn't be here in the first place."
     c "I've observed you for across so many cycles Sera. I never could quite understand why you people act the way you do."
+
+    scene rift_time_bg
+
+    show sera neutral:
+        xalign 0 yalign 0.5
+
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Tell me..."
 
     # The Curator's Interrogation
@@ -143,15 +225,40 @@ label walk_with_her:
                 jump are_you_special
 
 label who_are_you:
+
+    show sera happy: 
+        xalign 0.0 yalign 0.5 
     s "Who I am?"
+
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You heard that right."
+
+    show sera neutral: 
+        xalign 0.0 yalign 0.5 
+    s "Who I am?"
     s "Of course I do."
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Mhmm. You say that and yet from my observations you are a confusing one."
     c "During your times away from this void, I've observed some of your history."
+
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You humbly brag in front of others to put up a confident front- hoping to appear mightier than the rest."
+    
+    show curator sad:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "People may not notice it, but you like to push others away through excuses of being busy and all, just to be alone with yourself."
+
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Despite this, you even go out of your way to help others- be it at your own detriment."
     c "I never considered you the sociable type despite the way you present yourself to others."
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You withdraw from yourself from situations you find difficult."
     c "You crave praise from other people yet not those close to you."
     c "Sometimes I truly wonder If you even live for yourself and what you want."
@@ -159,7 +266,13 @@ label who_are_you:
     jump after_interrogation_dialogue
 
 label are_you_special:
-    c "Woe is life, isn't that right, Sera?"
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
+    c "\"Woe is life\" isn't that right, Sera?"
+
+    show sera sad:
+        xalign 0.0 yalign 0.5
     s "What do you want?"
     c "Sorry, sorry, I'm merely trying to break the ice between us"
     c "I just want to say that you considering yourself as unique is a misconception."
@@ -313,7 +426,3 @@ label after_vulnerability_dialogue:
     # This ends the game.
     return
 
-label leave:
-    "You decided to leave. The consequences of this choice are yet to be seen."
-    # This could lead to a different ending or loop back.
-    return

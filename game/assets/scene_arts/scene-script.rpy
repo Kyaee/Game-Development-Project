@@ -14,7 +14,8 @@
 # Naming convention: cg_[scene_name] or scene_[description]
 
 # Example scene art (rename "image.png" to something descriptive)
-image cg_example = "assets/scene_arts/image.png"
+image scene1 = "assets/scene_arts/scene-1.png"
+image scene2 = "assets/scene_arts/scene-2.png"
 
 # Placeholder definitions for future scene arts
 # Uncomment and update the path when you add the actual images:
