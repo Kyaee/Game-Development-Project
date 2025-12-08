@@ -49,7 +49,7 @@ define q = Character("???", who_color="#ff9999", image="sera")
 
 image sera neutral:
     "assets/character_sheets/sera_model/sera-neutral.png"
-    zoom 0.5
+    zoom 0.5 yalign 0.5
 
 image sera happy:
     "assets/character_sheets/sera_model/sera-happy.png"

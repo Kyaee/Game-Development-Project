@@ -24,6 +24,8 @@ define curator = Character(
 
 # Alternative short alias for convenience in scripts
 define c = curator
+define t = Character("???", who_color="#c8a2c8", image="curator")
+
 
 
 # ----------------------------------------------------------------------------
@@ -59,6 +61,37 @@ image curator sad:
 image curator angry:
     "assets/character_sheets/curator/curator-angry.png"
     zoom 0.5
+
+# Static glitch expression
+image curator glitch:
+    "assets/character_sheets/curator/curator-glitch.png"
+    zoom 0.5
+
+# Animated glitch effect (cycles through glitch frames)
+image curator glitching:
+    zoom 0.5
+    "assets/character_sheets/curator/glitch/5.png"
+    0.20
+    "assets/character_sheets/curator/glitch/4.png"
+    0.20
+    "assets/character_sheets/curator/glitch/3.png"
+    0.20
+    repeat
+
+# Single glitch flash effect (plays once)
+image curator glitch_flash:
+    zoom 0.5
+    "assets/character_sheets/curator/glitch/1.png"
+    0.05
+    "assets/character_sheets/curator/glitch/2.png"
+    0.05
+    "assets/character_sheets/curator/glitch/3.png"
+    0.05
+    "assets/character_sheets/curator/glitch/4.png"
+    0.05
+    "assets/character_sheets/curator/glitch/5.png"
+    0.05
+    "assets/character_sheets/curator/curator-neutral.png"
 
 
 # ----------------------------------------------------------------------------

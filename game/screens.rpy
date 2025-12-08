@@ -81,6 +81,16 @@ style frame:
 ## In-game screens
 ################################################################################
 
+## Centered Text Screen (no textbox) ###########################################
+##
+## A custom screen for displaying centered dramatic text without any textbox.
+
+screen centered_text(text_content):
+    text text_content:
+        xalign 0.5
+        yalign 0.5
+        text_align 0.5
+        size 40
 
 ## Say screen ##################################################################
 ##
@@ -97,8 +107,16 @@ style frame:
 
 screen say(who, what):
 
+    # Determine which textbox to use based on the speaker
+    # You can add more conditions for different characters
+    if who == "The Curator" or who == "Sera" or who == "???":
+        $ textbox_bg = "gui/custom-textbox.png"
+    else:
+        $ textbox_bg = "gui/no-design-textbox.png"
+
     window:
         id "window"
+        background Image(textbox_bg, xalign=0.5, yalign=1.0)
 
         if who is not None:
 
@@ -135,7 +153,8 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    # Background is now set dynamically in the say screen based on speaker
+    # background Image("gui/custom-textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
