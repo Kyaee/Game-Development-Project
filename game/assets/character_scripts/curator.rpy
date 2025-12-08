@@ -41,12 +41,24 @@ define c = curator
 #   - curator_default_surprised.png
 
 # Base/Neutral expressions
-image curator neutral = "assets/character_sheets/curator/curator_neutral.png"
-image curator happy = "assets/character_sheets/curator/curator_happy.png"
-image curator sad = "assets/character_sheets/curator/curator_sad.png"
-image curator angry = "assets/character_sheets/curator/curator_angry.png"
-image curator surprised = "assets/character_sheets/curator/curator_surprised.png"
-image curator thinking = "assets/character_sheets/curator/curator_thinking.png"
+# Image files are 1578x2110 pixels, scaled down to fit screen (targeting ~1080 height)
+# Available expressions: neutral, happy, sad, angry
+
+image curator neutral:
+    "assets/character_sheets/curator/curator-neutral.png"
+    zoom 0.5
+
+image curator happy:
+    "assets/character_sheets/curator/curator-happy.png"
+    zoom 0.5
+
+image curator sad:
+    "assets/character_sheets/curator/curator-sad.png"
+    zoom 0.5
+
+image curator angry:
+    "assets/character_sheets/curator/curator-angry.png"
+    zoom 0.5
 
 
 # ----------------------------------------------------------------------------
@@ -96,9 +108,10 @@ image curator thinking = "assets/character_sheets/curator/curator_thinking.png"
 # Small portrait shown next to dialogue text
 # Place file at: game/assets/character_sheets/curator/side/
 
-image side curator neutral = "assets/character_sheets/curator/side/curator_neutral.png"
-image side curator happy = "assets/character_sheets/curator/side/curator_happy.png"
-image side curator sad = "assets/character_sheets/curator/side/curator_sad.png"
+# Commented out until actual side images are added:
+# image side curator neutral = "assets/character_sheets/curator/side/curator_neutral.png"
+# image side curator happy = "assets/character_sheets/curator/side/curator_happy.png"
+# image side curator sad = "assets/character_sheets/curator/side/curator_sad.png"
 
 
 # ----------------------------------------------------------------------------

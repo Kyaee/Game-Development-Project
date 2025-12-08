@@ -44,12 +44,24 @@ define q = Character("???", who_color="#ff9999", image="sera")
 #   - sera_default_surprised.png
 
 # Base/Neutral expressions
-image sera neutral = "assets/character_sheets/sera_model/sera_neutral.png"
-image sera happy = "assets/character_sheets/sera_model/sera_happy.png"
-image sera sad = "assets/character_sheets/sera_model/sera_sad.png"
-image sera angry = "assets/character_sheets/sera_model/sera_angry.png"
-image sera surprised = "assets/character_sheets/sera_model/sera_surprised.png"
-image sera thinking = "assets/character_sheets/sera_model/sera_thinking.png"
+# Image files are 1578x2110 pixels, scaled down to fit screen (targeting ~1080 height)
+# Available expressions: neutral, happy, sad, angry
+
+image sera neutral:
+    "assets/character_sheets/sera_model/sera-neutral.png"
+    zoom 0.5
+
+image sera happy:
+    "assets/character_sheets/sera_model/sera-happy.png"
+    zoom 0.5
+
+image sera sad:
+    "assets/character_sheets/sera_model/sera-sad.png"
+    zoom 0.5
+
+image sera angry:
+    "assets/character_sheets/sera_model/sera-angry.png"
+    zoom 0.5
 
 
 # ----------------------------------------------------------------------------
@@ -99,9 +111,10 @@ image sera thinking = "assets/character_sheets/sera_model/sera_thinking.png"
 # Small portrait shown next to dialogue text
 # Place file at: game/assets/character_sheets/sera_model/side/
 
-image side sera neutral = "assets/character_sheets/sera_model/side/sera_neutral.png"
-image side sera happy = "assets/character_sheets/sera_model/side/sera_happy.png"
-image side sera sad = "assets/character_sheets/sera_model/side/sera_sad.png"
+# Commented out until actual side images are added:
+# image side sera neutral = "assets/character_sheets/sera_model/side/sera_neutral.png"
+# image side sera happy = "assets/character_sheets/sera_model/side/sera_happy.png"
+# image side sera sad = "assets/character_sheets/sera_model/side/sera_sad.png"
 
 
 # ----------------------------------------------------------------------------

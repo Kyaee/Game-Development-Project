@@ -10,6 +10,8 @@ label start:
     scene black
     with fade
 
+    play music bgm_ancient_memories fadein 1.0
+
     c "Time is a cruel concept wouldn't you agree?"
     c "So many humans would give up anything just for more time"
     c "After all"
