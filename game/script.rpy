@@ -113,7 +113,7 @@ label start:
     q "I just need to save them."
 
     scene rift_time_bg 
-    
+
     show sera neutral:
         xalign 0 yalign 0.5
     show curator neutral:
@@ -498,7 +498,7 @@ label after_vulnerability_dialogue:
 
     "Those words caught Sera off guard. Consequently, a thought struck Sera."
 
-
+    
     s "Hey-"
     s "I'm willing to do anything to get together with my friends again..."
     s "If I get the chance, I won't run away from anything."

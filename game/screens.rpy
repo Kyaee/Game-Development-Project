@@ -223,12 +223,37 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+# Transform for choice button hover animation
+transform choice_hover:
+    on idle:
+        easein 0.2 xoffset 0
+    on hover:
+        easein 0.2 xoffset 15
+
+# Transform for choice appearing animation (staggered)
+transform choice_appear(delay=0):
+    alpha 0.0 xoffset -30
+    pause delay
+    easein 0.3 alpha 1.0 xoffset 0
+
 screen choice(items):
     style_prefix "choice"
-
+    
+    # Dark overlay behind choices
+    add Solid("#00000099") at transform:
+        alpha 0.0
+        linear 0.3 alpha 1.0
+    
     vbox:
-        for i in items:
-            textbutton i.caption action i.action
+        xalign 0.5
+        yalign 0.5
+        spacing 25
+        
+        # Staggered appearance for each choice
+        for index, i in enumerate(items):
+            textbutton i.caption:
+                action i.action
+                at choice_appear(index * 0.15), choice_hover
 
 
 style choice_vbox is vbox
@@ -237,16 +262,36 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
-    yanchor 0.5
+    yalign 0.5
+    spacing 25
 
-    spacing gui.choice_spacing
+style choice_button:
+    xalign 0.5
+    xminimum 700
+    yminimum 70
+    
+    # Elegant dark theme with transparency
+    background Solid("#1a1a2ecc")
+    hover_background Solid("#2d2d4aee")
+    selected_background Solid("#3d3d5aff")
+    
+    padding (50, 20, 50, 20)
 
-style choice_button is default:
-    properties gui.button_properties("choice_button")
-
-style choice_button_text is default:
-    properties gui.text_properties("choice_button")
+style choice_button_text:
+    xalign 0.5
+    yalign 0.5
+    text_align 0.5
+    
+    # Color scheme matching your game's aesthetic
+    idle_color "#8888aa"
+    hover_color "#ffffff"
+    selected_color "#c8a2c8"
+    insensitive_color "#4444447f"
+    
+    size 32
+    
+    # Text shadow for better readability
+    outlines [(2, "#000000", 0, 0)]
 
 
 ## Quick Menu screen ###########################################################
