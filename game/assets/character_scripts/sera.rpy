@@ -25,6 +25,9 @@ define sera = Character(
 # Alternative short alias for convenience in scripts
 define s = sera
 
+# Define ??? as an alias for Sera, but with a different name
+define q = Character("???", who_color="#ff9999", image="sera")
+
 
 # ----------------------------------------------------------------------------
 # IMAGE DEFINITIONS - Basic Sprites
