@@ -67,6 +67,10 @@ image sera close_eyes:
     "assets/character_sheets/sera_model/sera-close-eyes.png"
     zoom 0.5
 
+image sera depressed:
+    "assets/character_sheets/sera_model/sera-depressed.png"
+    zoom 0.5
+
 # ----------------------------------------------------------------------------
 # LAYERED IMAGE DEFINITION (Advanced - for composite sprites)
 # ----------------------------------------------------------------------------
