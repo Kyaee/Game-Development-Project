@@ -26,7 +26,7 @@ define sera = Character(
 define s = sera
 
 # Define ??? as an alias for Sera, but with a different name
-define q = Character("???", who_color="#ff9999", image="sera")
+define q = Character("girl", who_color="#ff9999", image="sera")
 
 
 # ----------------------------------------------------------------------------
@@ -64,7 +64,7 @@ image sera angry:
     zoom 0.5
 
 image sera close_eyes:
-    "assets/character_sheets/sera_model/sera-close_eyes.png"
+    "assets/character_sheets/sera_model/sera-close-eyes.png"
     zoom 0.5
 
 # ----------------------------------------------------------------------------

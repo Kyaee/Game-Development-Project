@@ -49,10 +49,13 @@ label start:
     # Assuming a background for the fragmented memory space is available, e.g., 'bg fragmented_space'
     # scene bg fragmented_space with fadeIn
 
-    show sera neutral:
+    show sera close_eyes:
         xalign 0 yalign 0.5
     with dissolve
     "The girl on the floor stares at Time itself with a blank expression..."
+
+    show sera neutral:
+        xalign 0 yalign 0.5
     "She has been here before..." 
     "More times than she could remember..."
     t "So we meet again..."
@@ -120,6 +123,8 @@ label start:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "I see..."
 
+    show sera sad:
+        xalign 0 yalign 0.5
     show curator sad:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "Before you attempt to break reality again, I implore you to walk with me."
@@ -133,15 +138,17 @@ label start:
 
 label walk_with_her:
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
     "This choice seems to make the woman happy. As if waiting for this moment, the curator takes the chance to explain something she's been wanting to tell for a long time."
 
     c "This place is more than just a void."
-    show curator happy:
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "This is the river of time where I keep all of which has transpired."
 
+    show sera neutral:
+        xalign 0 yalign 0.5
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "Your endless cycles created an endpoint in the river which is not supposed to exist."
@@ -153,8 +160,11 @@ label walk_with_her:
     "The Curator directs her gaze downward as if she was deep in thought."
 
     c "What the world just experienced was a memory overflow."
-    "Time dramatically unveils the vast fragments of memories and worlds coalesced into one spot as if an invisible wall is preventing the world from moving forward. Sera stands shocked at the vast accumulation of crystals before her. This was her many attempts in giving her friends a true ending."
+    scene scene3 with flash_white
+    "The Curator dramatically unveils the vast fragments of memories and worlds coalesced into one spot as if an invisible wall is preventing the world from moving forward. Sera stands shocked at the vast accumulation of crystals before her. This was her many attempts in giving her friends a true ending."
         
+    show sera neutral:
+        xalign 0 yalign 0.5
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "Since you won't let the world move forward, it just collapsed on itself."
@@ -162,7 +172,7 @@ label walk_with_her:
     c "After all, most of the shards here belong to you, the worlds you made, and your memories, Sera."
     s "Then what do you suggest, I do"
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "NO WAY! YOU'RE ACTUALLY COOPERATING!?"
 
@@ -171,7 +181,11 @@ label walk_with_her:
     c "{i}Ahem {/i}"
     "The curator clears her throat and straightens her dress to appear more dignified."
 
-    show curator happy:
+    scene rift_time_bg with flash_white
+
+    show sera neutral:
+        xalign 0 yalign 0.5
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "I'll be honest, you REALLY need to return my pocket watch or whatever that old geezer turned my authority into."
 
@@ -230,7 +244,7 @@ label who_are_you:
         xalign 0.0 yalign 0.5 
     s "Who I am?"
 
-    show curator happy:
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "You heard that right."
 
@@ -239,12 +253,12 @@ label who_are_you:
     s "Who I am?"
     s "Of course I do."
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "Mhmm. You say that and yet from my observations you are a confusing one."
     c "During your times away from this void, I've observed some of your history."
 
-    show curator happy:
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "You humbly brag in front of others to put up a confident front- hoping to appear mightier than the rest."
     
@@ -252,40 +266,52 @@ label who_are_you:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "People may not notice it, but you like to push others away through excuses of being busy and all, just to be alone with yourself."
 
-    show curator happy:
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "Despite this, you even go out of your way to help others- be it at your own detriment."
     c "I never considered you the sociable type despite the way you present yourself to others."
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
         
     c "You withdraw from yourself from situations you find difficult."
-    show curator happy:
+    show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "You crave praise from other people yet not those close to you."
     c "Sometimes I truly wonder If you even live for yourself and what you want."
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
     s "Then I think my answer is, no."
     jump after_interrogation_dialogue
 
 label are_you_special:
 
-    show curator smile:
+    show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "\"Woe is life\" isn't that right, Sera?"
 
     show sera sad:
         xalign 0.0 yalign 0.5
     s "What do you want?"
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "Sorry, sorry, I'm merely trying to break the ice between us"
+
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "I just want to say that you considering yourself as unique is a misconception."
     c "You're delusional to think you are grandiose or special. These fantastical reveries you have in your mind are devastating to your future."
+
+    show curator neutral:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "It hurts when what you imagine life could be doesn't match up with reality, right?"
     s "..."
     c "You think your experiences, failures, and inadequacies are solely unique to you?"
+
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You do everything by yourself because you believe no one can understand or relate to you. You refuse help just to preserve your golden image."
     c "Look at you now."
     s "Of all the people to say that to me, I think you're the least qualified to lecture me on this."
@@ -296,6 +322,9 @@ label are_you_special:
     jump after_interrogation_dialogue
 
 label after_interrogation_dialogue:
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "I don't want to stop you, Sera."
     c "There must be more as to why your local deity made such a drastic decision.  A mortal, with my power? Preposterous!"
     s "I know, I know. Just let me think for a second."
