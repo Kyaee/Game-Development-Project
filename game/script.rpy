@@ -259,9 +259,15 @@ label who_are_you:
 
     show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
+        
     c "You withdraw from yourself from situations you find difficult."
+    show curator happy:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     c "You crave praise from other people yet not those close to you."
     c "Sometimes I truly wonder If you even live for yourself and what you want."
+
+    show curator smile:
+        xalign 1.0 yalign 0.5 xzoom -1.0
     s "Then I think my answer is, no."
     jump after_interrogation_dialogue
 
