@@ -15,7 +15,7 @@ label leave:
     hide text with quick_dissolve
     
     # Flash white for the blinding light
-    scene white with flash_white
+    scene rift_time_bg with flash_white
     
     show text "{color=#000}{size=40}This action wraps the girl around in blinding light and vanishes from the realm.{/size}{/color}" at truecenter with slow_dissolve
     pause

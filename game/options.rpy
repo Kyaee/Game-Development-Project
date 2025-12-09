@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("ITP310")
+define config.name = _("PROJECT MEMORIES")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set

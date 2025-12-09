@@ -83,6 +83,13 @@ define gui.notify_text_size = 24
 ## The size of the game's title.
 define gui.title_text_size = 75
 
+## Dialogue Styling
+define gui.dialogue_text_outlines = [ (0, "#00000080", 2, 2) ]
+
+## Name Styling
+define gui.name_text_outlines = [ (1, "#00000080", 0, 0) ]
+define gui.name_text_outlines = [ (2, "#00000080", 2, 2) ]
+
 ## Text Speed (Typewriter Effect) ##############################################
 ##
 ## The number of characters per second to display. Set to 0 for instant text.

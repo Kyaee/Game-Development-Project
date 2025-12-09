@@ -13,7 +13,7 @@
 define sera = Character(
     "Sera",
     # Name tag color (shown above dialogue)
-    who_color="#ff9999",
+    who_color="#89c6ff",
     # Dialogue text color (optional)
     # what_color="#ffffff",
     # Voice tag for auto voice (optional)
@@ -26,7 +26,7 @@ define sera = Character(
 define s = sera
 
 # Define ??? as an alias for Sera, but with a different name
-define q = Character("girl", who_color="#ff9999", image="sera")
+define q = Character("{i}Short Haired Girl{/i}", who_color="#f1e2ff", image="sera")
 
 
 # ----------------------------------------------------------------------------
