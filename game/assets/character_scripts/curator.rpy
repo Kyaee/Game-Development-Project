@@ -13,7 +13,7 @@
 define curator = Character(
     "The Curator",
     # Name tag color (shown above dialogue)
-    who_color="#c8a2c8",
+    who_color="#ff81a6",
     # Dialogue text color (optional)
     # what_color="#ffffff",
     # Voice tag for auto voice (optional)

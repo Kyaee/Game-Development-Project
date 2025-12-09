@@ -17,6 +17,7 @@
 image scene1 = "assets/scene_arts/scene-1.png"
 image scene2 = "assets/scene_arts/scene-2.png"
 image scene3 = "assets/scene_arts/scene-3.png"
+image scene4 = "assets/scene_arts/scene-4-the-happening.png"
 
 # Placeholder definitions for future scene arts
 # Uncomment and update the path when you add the actual images:
