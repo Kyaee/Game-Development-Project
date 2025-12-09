@@ -62,6 +62,10 @@ image curator angry:
     "assets/character_sheets/curator/curator-angry.png"
     zoom 0.5
 
+image curator smile:
+    "assets/character_sheets/curator/curator-smile.png"
+    zoom 0.5
+
 # Static glitch expression
 image curator glitch:
     "assets/character_sheets/curator/curator-glitch.png"
@@ -71,11 +75,11 @@ image curator glitch:
 image curator glitching:
     zoom 0.5
     "assets/character_sheets/curator/glitch/5.png"
-    0.20
+    0.25
     "assets/character_sheets/curator/glitch/4.png"
-    0.20
+    0.25
     "assets/character_sheets/curator/glitch/3.png"
-    0.20
+    0.25
     repeat
 
 # Single glitch flash effect (plays once)

@@ -223,12 +223,115 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+# Transform for choice button hover animation - glides right with slight scale
+transform choice_hover:
+    on idle:
+        easein 0.25 xoffset 0 zoom 1.0
+    on hover:
+        easein 0.25 xoffset 20 zoom 1.02
+
+# Transform for choice appearing animation (staggered fade + slide)
+transform choice_appear(delay=0):
+    alpha 0.0 xoffset -50 blur 5
+    pause delay
+    easein 0.4 alpha 1.0 xoffset 0 blur 0
+
+# Pulsing glow effect for the decorative elements
+transform pulse_glow:
+    alpha 0.3
+    ease 2.0 alpha 0.6
+    ease 2.0 alpha 0.3
+    repeat
+
+# Slow rotation for decorative elements
+transform slow_rotate:
+    rotate 0
+    linear 20.0 rotate 360
+    repeat
+
 screen choice(items):
     style_prefix "choice"
-
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+    
+    # Layered dark overlay with vignette effect
+    add Solid("#000000") at transform:
+        alpha 0.0
+        linear 0.4 alpha 0.75
+    
+    # Subtle decorative glow behind choices
+    add Solid("#c8a2c8") at transform:
+        alpha 0.0
+        linear 0.5 alpha 0.05
+    
+    # Main choice container with decorative frame
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xpadding 80
+        ypadding 60
+        background Solid("#0a0a1500")
+        
+        vbox:
+            xalign 0.5
+            spacing 20
+            
+            # Decorative top line
+            add Solid("#c8a2c8"):
+                xsize 400
+                ysize 2
+                xalign 0.5
+                at transform:
+                    alpha 0.0
+                    pause 0.2
+                    easein 0.5 alpha 0.6
+            
+            null height 15
+            
+            # Choice buttons with staggered animation
+            for index, i in enumerate(items):
+                button:
+                    action i.action
+                    at choice_appear(index * 0.2), choice_hover
+                    xalign 0.5
+                    xminimum 650
+                    yminimum 75
+                    
+                    # Layered button design
+                    background Solid("#12121f00")
+                    hover_background Solid("#12121f00")
+                    
+                    hbox:
+                        xalign 0.5
+                        yalign 0.5
+                        spacing 20
+                        
+                        # Left decorative diamond
+                        text "◆" size 18:
+                            yalign 0.5
+                            color "#c8a2c855"
+                            hover_color "#c8a2c8ff"
+                        
+                        # Main choice text
+                        text i.caption:
+                            style "choice_button_text"
+                            yalign 0.5
+                        
+                        # Right decorative diamond
+                        text "◆" size 18:
+                            yalign 0.5
+                            color "#c8a2c855"
+                            hover_color "#c8a2c8ff"
+            
+            null height 15
+            
+            # Decorative bottom line
+            add Solid("#c8a2c8"):
+                xsize 400
+                ysize 2
+                xalign 0.5
+                at transform:
+                    alpha 0.0
+                    pause 0.3
+                    easein 0.5 alpha 0.6
 
 
 style choice_vbox is vbox
@@ -237,16 +340,43 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
-    yanchor 0.5
+    yalign 0.5
+    spacing 20
 
-    spacing gui.choice_spacing
+style choice_button:
+    xalign 0.5
+    xminimum 650
+    yminimum 75
+    
+    # Gradient-like layered background
+    background Solid("#1a1a2e00")
+    hover_background Solid("#2a2a4e00")
+    
+    padding (60, 20, 60, 20)
 
-style choice_button is default:
-    properties gui.button_properties("choice_button")
-
-style choice_button_text is default:
-    properties gui.text_properties("choice_button")
+style choice_button_text:
+    xalign 0.5
+    yalign 0.5
+    text_align 0.5
+    
+    # Elegant color transitions
+    idle_color "#9999bb"
+    hover_color "#ffffff"
+    selected_color "#c8a2c8"
+    insensitive_color "#4444447f"
+    
+    size 30
+    
+    # Subtle glow effect with layered outlines
+    outlines [
+        (3, "#c8a2c800", 0, 0),   # Transparent glow (idle)
+        (1, "#000000aa", 1, 1)     # Soft shadow
+    ]
+    
+    hover_outlines [
+        (4, "#c8a2c844", 0, 0),   # Purple glow on hover
+        (1, "#000000aa", 1, 1)     # Soft shadow
+    ]
 
 
 ## Quick Menu screen ###########################################################
