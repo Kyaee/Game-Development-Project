@@ -6,6 +6,11 @@
 # Define custom dissolve transitions
 define slow_dissolve = Dissolve(1.5)
 define quick_dissolve = Dissolve(0.5)
+    
+# Vulnerability menu tracking variables
+default chose_given_up = False
+default chose_too_much = False
+default chose_scared = False
 
 # The game starts here.
 
@@ -362,12 +367,21 @@ label after_interrogation_dialogue:
         xalign 1.0 yalign 0.5 xzoom -1.0
     s "This is the only thing I can cling towards."
 
+    # Reset tracking variables for vulnerability choices
+    $ chose_given_up = False
+    $ chose_too_much = False
+    $ chose_scared = False
+
+label vulnerability_menu:
     menu:
-        "I've already given up.":
+        "I've already given up." if not chose_given_up:
+            $ chose_given_up = True
             jump given_up
-        "It's too much.":
+        "It's too much." if not chose_too_much:
+            $ chose_too_much = True
             jump too_much
-        "I'm scared.":
+        "I'm scared." if not chose_scared:
+            $ chose_scared = True
             jump scared
 
 label given_up:
@@ -383,7 +397,12 @@ label given_up:
     s "After all, in this world, there's a million others just like me doing the same thing."
     s "In fact, we do the same thing and yet they are still better than me in every single way no matter how much work I put into my work."
     s "I'm not special."
-    jump after_vulnerability_dialogue
+    
+    # Check if all options have been selected
+    if chose_given_up and chose_too_much and chose_scared:
+        jump after_vulnerability_dialogue
+    else:
+        jump vulnerability_menu
 
 label too_much:
     show sera happy:
@@ -406,7 +425,12 @@ label too_much:
     s "\"Why am I not good enough\""
     s "\"Why can't you do something this simple\""
     s "I'm not worthy of anyone's praise."
-    jump after_vulnerability_dialogue
+    
+    # Check if all options have been selected
+    if chose_given_up and chose_too_much and chose_scared:
+        jump after_vulnerability_dialogue
+    else:
+        jump vulnerability_menu
 
 label scared:
     show sera sad:
@@ -439,7 +463,12 @@ label scared:
         xalign 0 yalign 0.5
     s "But, I'm afraid I'll one day run out of ideas."
     s "Maybe even stop and be forgotten entirely."
-    jump after_vulnerability_dialogue
+    
+    # Check if all options have been selected
+    if chose_given_up and chose_too_much and chose_scared:
+        jump after_vulnerability_dialogue
+    else:
+        jump vulnerability_menu
 
 label after_vulnerability_dialogue:
 
@@ -498,7 +527,7 @@ label after_vulnerability_dialogue:
 
     "Those words caught Sera off guard. Consequently, a thought struck Sera."
 
-    
+
     s "Hey-"
     s "I'm willing to do anything to get together with my friends again..."
     s "If I get the chance, I won't run away from anything."
