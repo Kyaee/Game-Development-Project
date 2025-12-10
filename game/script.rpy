@@ -551,7 +551,7 @@ label after_vulnerability_dialogue:
     c "You're right that you won't remember a single thing once I restore the world."
     c "However, I'll pull a few strings here and there for you this one time only."
     s "Wait, what are you going to do?"
-    c "It's nothing that you need to be concerned with."
+    c "It's nothing that     you need to be concerned with."
     c "If you're lucky, all of this would have just felt like a dream."
     c "If you remember this dream-"
     c "Would you consider making an offering to a shrine outside of your town?"
