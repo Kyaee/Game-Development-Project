@@ -30,7 +30,7 @@ label start:
     pause
     hide text with quick_dissolve
     
-    show text "{color=#FFF}{size=40}After all{/size}{/color}" at truecenter with slow_dissolve
+    show text "{color=#FFF}{size=40}After all...{/size}{/color}" at truecenter with slow_dissolve
     pause
     hide text with quick_dissolve
     
@@ -56,14 +56,17 @@ label start:
 
     show sera close_eyes:
         xalign 0 yalign 0.5
-    with dissolve
-    "The girl on the floor stares at Time itself with a blank expression..."
+    with slow_dissolve
+
+    pause
+
+    "A girl on the awakens on a cold surface floor and stares at {b}Time{/b} itself with a blank expression..."
 
     show sera neutral:
         xalign 0 yalign 0.5
     "She has been here before..." 
     "More times than she could remember..."
-    t "So we meet again..."
+    t "So we meet again..." with slow_dissolve
 
     show curator glitching:
         xalign 1.0 yalign 0.5 xzoom -1.0
@@ -96,7 +99,7 @@ label start:
     # CHANGE THE CHARACTER SPRITE
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "You are tampering with the natural flow and course of time in the num-"
+    c "You are tampering with the natural flow and course of time in the num-{nw}" 
 
     #####################################################################################
     # Scene Art Play 1: The Rift of Time - A void where time stands still (Flash)
@@ -168,18 +171,31 @@ label walk_with_her:
     # Scene Art Play 2: The Rift of Time - A void where time stands still (Flash)
     #####################################################################################
 
-    scene scene3 with flash_white
-    "The Curator dramatically unveils the vast fragments of memories and worlds coalesced into one spot as if an invisible wall is preventing the world from moving forward. Sera stands shocked at the vast accumulation of crystals before her. This was her many attempts in giving her friends a true ending."
-        
-    show sera neutral:
-        xalign 0 yalign 0.5
-    show curator neutral:
-        xalign 1.0 yalign 0.5 xzoom -1.0
-    with dissolve
+    scene scene4 with flash_white
+
+    pause 1.0 
+     
+    "The Curator dramatically unveils the vast fragments of memories and worlds."
+    "They've coalesced into one spot as if an invisible wall is preventing the world from moving forward."
+    "Sera stands shocked at the vast accumulation of crystals before her." 
+    "This was the result her many attempts in giving her friends a {b}true ending.{/b}"
+
+    # show sera neutral:
+    #     xalign 0 yalign 0.5
+    # show curator neutral:
+    #     xalign 1.0 yalign 0.5 xzoom -1.0
+    # with dissolve
     c "Since you won't let the world move forward, it just collapsed on itself."
     c "If you go back to the beginning of the week, who knows how much faster the world will break."
-    c "After all, most of the shards here belong to you, the worlds you made, and your memories, Sera."
-    s "Then what do you suggest, I do"
+    c "After all, most of the shards here belong to you, the worlds you made, and your memories, {b}Sera{/b}."
+
+    scene rift_time_bg with slow_dissolve 
+
+    stop music fadeout 1.0
+
+    show sera close_eyes:
+        xalign 0 yalign 0.5
+    s "Then... what do you suggest, I do?"
 
     show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
@@ -187,16 +203,17 @@ label walk_with_her:
 
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "{i}Ahem {/i}"
-    "The curator clears her throat and straightens her dress to appear more dignified."
 
-    scene rift_time_bg with flash_white
+    play music bgm_ancient_memories
+
+    c "{i}Ahem*{/i}"
+    "The curator clears her throat and straightens her dress to appear more dignified."
 
     show sera neutral:
         xalign 0 yalign 0.5
     show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "I'll be honest, you REALLY need to return my pocket watch or whatever that old geezer turned my authority into."
+    c "I'll be honest, you REALLY need to return my pocket watch or whatever that {b}old geezer{/b} turned my authority into."
 
     show sera angry: 
         xalign 0.0 yalign 0.5
@@ -216,19 +233,19 @@ label walk_with_her:
 
     show curator angry:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "You repeated the same week for who knows how long to the point your very memories have clogged the flow of time!"
+    c "{b}{i}You repeated the same week{/i}{/b} for who knows how long to the point your very memories have clogged the flow of time!"
 
     scene scene2 with quick_dissolve
     hide curator
     hide sera
 
-    s "And then what!? I go back to the beginning without a single memory of any loop?"
+    s "AND THEN WHAT!? I go back to the very beginning without a single memory of any loop!?"
     s "I can't bear to witness my friend disappear like that!"
 
     "Time observes the girl lost in her own conundrum with little to no regard of the perilous fate she placed reality in."
 
     c "Honestly, if that {b}{i}local deity{/i}{/b} of yours never played with my realm's authority we wouldn't be here in the first place."
-    c "I've observed you for across so many cycles Sera. I never could quite understand why you people act the way you do."
+    c "I've observed you for across your many cycles Sera. I never could quite understand why you people act the way you do."
 
     scene rift_time_bg 
 
@@ -304,7 +321,7 @@ label are_you_special:
 
     show curator smile:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "Sorry, sorry, I'm merely trying to break the ice between us"
+    c "Sorry, sorry, I'm merely trying to break the ice between us."
 
     show curator happy:
         xalign 1.0 yalign 0.5 xzoom -1.0
@@ -312,7 +329,8 @@ label are_you_special:
 
     show sera neutral:
         xalign 0.0 yalign 0.5
-    c "You're delusional to think you are grandiose or special. These fantastical reveries you have in your mind are devastating to your future."
+    c "You're kind of delusional to think you are grandiose or special."
+    c "These fantastical reveries you have in your mind are devastating to your future."
 
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
@@ -422,8 +440,8 @@ label too_much:
 
     show sera depressed:
         xalign 0.0 yalign 0.5
-    s "\"Why am I not good enough\""
-    s "\"Why can't you do something this simple\""
+    s "\"Why am I not good enough.\""
+    s "\"Why can't you do something this simple.\""
     s "I'm not worthy of anyone's praise."
     
     # Check if all options have been selected
@@ -435,13 +453,13 @@ label too_much:
 label scared:
     show sera sad:
         xalign 0.0 yalign 0.5
-    s "I fear that I'll never measure up to my old self."
+    s "I'll never measure up to my old self."
     show sera happy:
         xalign 0.0 yalign 0.5
     s "I keep looking back at my old works and find it \"better\" than the professional stuff I make these days."
     show sera sad:
         xalign 0.0 yalign 0.5
-    s "Sometimes I feel like it was a mistake to fall in love with art"
+    s "Sometimes I feel like it was a mistake to fall in love with art."
     s "Everytime I finish a piece, I'd be stuck wondering for a while if I can even make something new."
     s "I see all these other people in different spaces enjoying their craft."
     show sera happy: 
@@ -480,6 +498,8 @@ label after_vulnerability_dialogue:
     s "If I am given the option to do everything over and over again. I would keep choosing to be an artist."
     s "Art makes me feel alive."
 
+    pause
+
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
     "The curator fixes their gaze upon Sera that's lost in her own thoughts."
@@ -495,7 +515,8 @@ label after_vulnerability_dialogue:
     c "You keep wanting people to validate the idea of you being meaningless."
     show curator neutral:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "Sera, the truth is- people care."
+    c "Sera, the truth is..."
+    c "People care."
     c "You never showed any reason for them not to want you."
     c "You think so little of yourself and thought nobody cared about you."
 
@@ -510,13 +531,14 @@ label after_vulnerability_dialogue:
 
     show curator sad:
         xalign 1.0 yalign 0.5 xzoom -1.0
-    c "You are only suffocating yourself by isolating yourself."
+    c "You are only suffocating by isolating yourself."
     c "Sera, you can't avoid people or activities just because you don't want to disappoint them."
     c "There's no shame in being helped by others, it will never ever be a weakness."
-    c "You don't have to carry everything by yourself, it's fine to open up."
+    c "You don't have to carry everything by yourself..." 
+    c "You are just human."
     c "There are just problems that are too big to handle for one person."
     c "Throughout the course of time, I've seen many like you."
-    c "Don't ever think no one cares about you."
+    c "You'll only dig a bigger hole if you think no one cares about you."
 
     "The curator tried to offer words of encouragement to Sera but they had one specifically important thing to say."
 
@@ -524,44 +546,72 @@ label after_vulnerability_dialogue:
         xalign 1.0 yalign 0.5 xzoom -1.0
     c "You keep trying to create the perfect ending for your group, but did you ever include yourself?"
     c "If you ever find yourself lost, those people are more than willing to share the pain that you carry."
+    
+    pause
 
-    "Those words caught Sera off guard. Consequently, a thought struck Sera."
+    show sera neutral
 
+    pause
 
+    "Those words caught Sera off guard. Consequently, a thought struck her."
+
+    show sera happy
     s "Hey-"
-    s "I'm willing to do anything to get together with my friends again..."
+    s "I'm willing to do anything to be with my friends again..."
     s "If I get the chance, I won't run away from anything."
-    s "I- If- I give this back, you can fix everything right?"
+    s "I-"
+    s "If-"
+    s "If I give this back, you can fix everything right?"
     c "!"
     c "Of course."
     c "However, you know I'll be deleting everything, right?"
     c "Your memories- your experiences- your decisions... everything you ever did in those cycles."
-    s "I know... but why do you sound so hesitant? Weren't you always forcing me to return your power when we first met each other? Isn't this what you always wanted?"
+    show sera close_eyes
+    s "I know..." 
+    show sera happy
+    s "but why do you sound so hesitant?" 
+    s "Weren't you always forcing me to return your power when we first met each other? Am I not the one being selfish here?"
+    show curator happy
     c "I'm taking a different approach this time, for your information."
     c "Clearly this method produced me desirable results."
 
-    "Sera clutches a pocket watch in her hands. She seemed hesitant to let it go. Despite this, Sera knew this was the only option left. Time has run out. So, Sera loosens her grip of the pocket watch and extends her hand towards the curator."
+    show curator neutral
+    show sera sad
+    "Sera clutches a pocket watch in her hands. She seemed hesitant to let it go."
+    show sera close_eyes
+    "Despite this, Sera knew this was the only option left. Time has run out."
+    show sera neutral
+    "So, Sera loosens her grip of the pocket watch and extends her hand towards the curator."
 
     "After thorough reflection and talk with the curator, Sera decides to return their authority."
 
-    "Time's Curator gently receives the pocket watch from Sera and it transforms the small mechanical device into a brush in their hands. The curator's lips curl into a soft smile while their eyes carry a sense of sorrow."
+    "Time's Curator gently receives the pocket watch from Sera and it transforms the small mechanical device into a brush in their hands."
+    show curator smile
+    "The curator's lips curl into a soft smile while their eyes carry a sense of sorrow."
 
     c "I can't exactly empathize that much with you Sera."
+    show curator neutral
     c "Outside of gods, deities, and the other governing concepts you're one of the only few humans I've interacted with."
     c "You're right that you won't remember a single thing once I restore the world."
+    show curator happy
     c "However, I'll pull a few strings here and there for you this one time only."
+    show sera angry
     s "Wait, what are you going to do?"
-    c "It's nothing that     you need to be concerned with."
+    c "It's nothing that you need to be concerned with."
+    show sera neutral
     c "If you're lucky, all of this would have just felt like a dream."
     c "If you remember this dream-"
+    show curator happy
     c "Would you consider making an offering to a shrine outside of your town?"
     s "I- outside of town?"
+    show curator smile
     c "Hehe. Nothing to be concerned about for now."
     c "Your experiences are like a story. That's why I'm rooting for you as a protagonist."
 
-    # The curator fixes the fragments of memories and time in the infinite void with a wave of their brush.
-    # Dramatic centered text for the final message
-    
+    # The curator fixes the fragments of memories and time in the infinite void with a wave of their brush. [flash into the scene art insert]
+    # Assuming a scene art 'scene_art_farewell'
+    # scene scene_art_farewell with flash
+
     hide sera
     hide curator
     window hide
@@ -605,4 +655,3 @@ label after_vulnerability_dialogue:
 
     # This ends the game.
     return
-
