@@ -445,25 +445,29 @@ init python:
     @gui.variant
     def small():
 
-        ## Font sizes.
-        gui.text_size = 45
-        gui.name_text_size = 54
-        gui.notify_text_size = 38
-        gui.interface_text_size = 45
-        gui.button_text_size = 45
-        gui.label_text_size = 51
+        ## Font sizes - using same as desktop for consistency
+        gui.text_size = 28
+        gui.name_text_size = 35
+        gui.notify_text_size = 24
+        gui.interface_text_size = 33
+        gui.button_text_size = 33
+        gui.label_text_size = 36
 
-        ## Adjust the location of the textbox.
-        gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        ## Adjust the location of the textbox for custom full-screen textbox
+        ## Keep same proportions as desktop version
+        gui.textbox_height = 1080
+        gui.name_xpos = 0.5
+        gui.name_ypos = 790
+        gui.name_xalign = 0.5
+        gui.dialogue_xpos = 402
+        gui.dialogue_ypos = 880
+        gui.dialogue_width = 1116
 
         ## Change the size and spacing of various things.
         gui.slider_size = 54
 
         gui.choice_button_width = 1860
-        gui.choice_button_text_size = 45
+        gui.choice_button_text_size = 28
 
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15
@@ -471,7 +475,7 @@ init python:
         gui.history_height = 285
         gui.history_text_width = 1035
 
-        gui.quick_button_text_size = 30
+        gui.quick_button_text_size = 21
 
         ## File button layout.
         gui.file_slot_cols = 2

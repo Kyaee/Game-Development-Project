@@ -1685,9 +1685,11 @@ screen quick_menu():
             textbutton _("Menu") action ShowMenu()
 
 
-style window:
-    variant "small"
-    background "gui/phone/textbox.png"
+## Commented out to use custom textbox on mobile
+## The say screen already handles textbox background dynamically
+# style window:
+#     variant "small"
+#     background "gui/phone/textbox.png"
 
 style radio_button:
     variant "small"
